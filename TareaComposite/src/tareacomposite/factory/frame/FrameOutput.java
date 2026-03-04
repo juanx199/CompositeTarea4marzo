@@ -3,15 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package tareacomposite.factory.frame;
+
 import tareacomposite.factory.Output;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author JUANCA
  */
-public class FrameOutput implements Output{
-    public voide writeData (String data){
+public class FrameOutput implements Output {
+    public void writeData(String data) {
         JOptionPane.showConfirmDialog(null, data);
-        //return data? 
+        // return data?
     }
 }

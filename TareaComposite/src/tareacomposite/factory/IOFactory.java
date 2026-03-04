@@ -10,5 +10,6 @@ package tareacomposite.factory;
  */
 public interface IOFactory {
     Input createInput();
-    Output createOutpur();
+
+    Output createOutput();
 }

@@ -3,13 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package tareacomposite.factory.frame;
+
 import tareacomposite.factory.*;
+
 /**
  *
  * @author JUANCA
  */
-public class FrameIOFactory implements IOFactory{
-    public Input createInput(){return new FrameInput();}
-    public Output createOutput(){return new FrameOutput();}
+public class FrameIOFactory implements IOFactory {
+    @Override
+    public Input createInput() {
+        return new FrameInput();
+    }
+
+    @Override
+    public Output createOutput() {
+        return new FrameOutput();
+    }
     // o public Output createOutput() return (Output) new FrameOutput();
 }
