@@ -5,6 +5,7 @@
 package tareacomposite;
 
 import tareacomposite.factory.IOFactory;
+import tareacomposite.factory.Input;
 import tareacomposite.factory.frame.FrameIOFactory;
 import tareacomposite.factory.console.ConsoleIOFactory;
 import tareacomposite.factory.Output;
@@ -19,14 +20,12 @@ import tareacomposite.model.ProductoSimple;
 public class TareaComposite {
     public static void main(String[] args) {
         // Interfaz por consola por defecto para el menú inicial
-        IOFactory initialMenuFactory = new ConsoleIOFactory();
-        Output menuOut = initialMenuFactory.createOutput();
-        tareacomposite.factory.Input menuIn = initialMenuFactory.createInput();
+        IOFactory factory = new ConsoleIOFactory();
+        Output menuOut = factory.createOutput();
+        Input menuIn = factory.createInput();
 
         menuOut.writeData("Seleccione el entorno de ejecución:\n1. Consola\n2. Ventana (Frame)\n");
         String opcion = menuIn.readData("Ingrese una opción (1 o 2):");
-
-        IOFactory factory;
         switch (opcion) {
             case "2":
                 menuOut.writeData("Cargando entorno visual (Frame)...");
@@ -35,7 +34,6 @@ public class TareaComposite {
             case "1":
             default:
                 menuOut.writeData("Cargando entorno de consola...");
-                factory = new ConsoleIOFactory();
                 break;
         }
 
